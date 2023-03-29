@@ -21,42 +21,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 // Проверяем ошибки.
 $errors = FALSE;
 if (empty($_POST['fio'])) {
-  print('Ваше имя.<br/>');
+  print('Нет данных: Имя.<br/>');
   $errors = TRUE;
 }
 
 if (empty($_POST['email'])) {
-  print('Ваша почта.<br/>');
+  print('Нет данных: Почта.<br/>');
   $errors = TRUE;
 }
 
 if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/', $_POST['year'])) {
-  print('Ваш год рождения.<br/>');
+  print('Нет данных: Год рождения.<br/>');
   $errors = TRUE;
 }
 
 if(empty($_POST['biography'])) {
-  print('Ваша биография.<br/>');
+  print('Нет данных: Биография.<br/>');
   $errors = TRUE;
 }
 
 if(!isset($_POST['r1'])){
-  print('Ваш пол.<br/>');
+  print('Нет данных: Пол.<br/>');
   $errors = TRUE;
 }
 
 if(!isset($_POST['abilities'])){
-  print('Ваши способности.<br/>');
+  print('Нет данных: Способности.<br/>');
   $errors = TRUE;
 }
 
 if(!isset($_POST['r2'])){
-  print('Количество ваших конечностей.<br/>');
+  print('Нет данных: Количество конечностей.<br/>');
   $errors = TRUE;
 }
 
 if(!isset($_POST['cb'])){
-  print('С контрактом ознакомлен.<br/>');
+  print('Отсутствует согласие с контрактом.<br/>');
   $errors = TRUE;
 }
 
@@ -136,4 +136,4 @@ $stmt->execute();
 // Делаем перенаправление.
 // Если запись не сохраняется, но ошибок не видно, то можно закомментировать эту строку чтобы увидеть ошибку.
 // Если ошибок при этом не видно, то необходимо настроить параметр display_errors для PHP.
-header('Location: ?save=1');
+footer('Location: ?save=1');

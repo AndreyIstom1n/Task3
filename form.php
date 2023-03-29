@@ -11,7 +11,7 @@
     }
     ?>
   </select>
-  
+  <br>
   <br>Ваш пол
   <p><input type="radio" name="r1[]" value="male"> Мужской</p>
   <p><input type="radio" name="r1[]" value="female"> Женский</p>
